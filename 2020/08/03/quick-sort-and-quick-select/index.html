@@ -20,28 +20,36 @@
     var CONFIG = {"hostname":"redsreds.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Max Chen&#39;s Blog">
-<meta property="og:url" content="https://redsreds.github.io/index.html">
+  <meta name="description" content="Quick sort Quick sort uses the idea of divide and conquer, basically, assign a pivot value, let two pointers moving toward each other, let all values same or less than pivot value on the left, and all">
+<meta property="og:type" content="article">
+<meta property="og:title" content="QuickSort And QuickSelect">
+<meta property="og:url" content="https://redsreds.github.io/2020/08/03/quick-sort-and-quick-select/index.html">
 <meta property="og:site_name" content="Max Chen&#39;s Blog">
+<meta property="og:description" content="Quick sort Quick sort uses the idea of divide and conquer, basically, assign a pivot value, let two pointers moving toward each other, let all values same or less than pivot value on the left, and all">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-08-03T20:31:03.000Z">
+<meta property="article:modified_time" content="2020-08-03T20:31:03.383Z">
 <meta property="article:author" content="max chen">
+<meta property="article:tag" content="algorithms">
+<meta property="article:tag" content="jiuzhang">
+<meta property="article:tag" content="lintcode">
+<meta property="article:tag" content="sort">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://redsreds.github.io/">
+<link rel="canonical" href="https://redsreds.github.io/2020/08/03/quick-sort-and-quick-select/">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome : true,
-    isPost : false,
+    isHome : false,
+    isPost : true,
     lang   : 'en'
   };
 </script>
 
-  <title>Max Chen's Blog</title>
+  <title>QuickSort And QuickSelect | Max Chen's Blog</title>
   
 
 
@@ -144,9 +152,10 @@
         <div class="content-wrap">
           
 
-          <div class="content index posts-expand">
+          <div class="content post posts-expand">
             
-      
+
+    
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
@@ -162,10 +171,9 @@
       <meta itemprop="name" content="Max Chen's Blog">
     </span>
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/08/03/quick-sort-and-quick-select/" class="post-title-link" itemprop="url">QuickSort And QuickSelect</a>
-        </h2>
+        <h1 class="post-title" itemprop="name headline">
+          QuickSort And QuickSelect
+        </h1>
 
         <div class="post-meta">
             <span class="post-meta-item">
@@ -188,7 +196,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="Quick-sort"><a href="#Quick-sort" class="headerlink" title="Quick sort"></a>Quick sort</h2><hr>
+        <h2 id="Quick-sort"><a href="#Quick-sort" class="headerlink" title="Quick sort"></a>Quick sort</h2><hr>
 <p>Quick sort uses the idea of divide and conquer, basically, assign a pivot value, let two pointers moving toward each other, let all values same or less than pivot value on the left, and all values same or greater than pivot value on the right. then respectively deal with the left array and right array.</p>
 <h3 id="464-Sort-Integers-II"><a href="#464-Sort-Integers-II" class="headerlink" title="464. Sort Integers II"></a>464. Sort Integers II</h3><p><strong>Key points:</strong></p>
 <ol>
@@ -212,89 +220,36 @@
 <li><a target="_blank" rel="noopener" href="https://www.jiuzhang.com/">https://www.jiuzhang.com/</a></li>
 </ol>
 
-      
     </div>
 
     
     
     
+
       <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
+          <div class="post-tags">
+              <a href="/tags/algorithms/" rel="tag"># algorithms</a>
+              <a href="/tags/jiuzhang/" rel="tag"># jiuzhang</a>
+              <a href="/tags/lintcode/" rel="tag"># lintcode</a>
+              <a href="/tags/sort/" rel="tag"># sort</a>
+          </div>
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://redsreds.github.io/2020/08/03/two-pointers-algorithm/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="max chen">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Max Chen's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/08/03/two-pointers-algorithm/" class="post-title-link" itemprop="url">Two Pointers Algorithm</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2020-08-03 01:41:42 / Modified: 15:13:23" itemprop="dateCreated datePublished" datetime="2020-08-03T01:41:42-04:00">2020-08-03</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>Two pointers algorithm is usually used to deal with problems involving arrays and lists. Usually move toward one direction and never go back.</p>
-<h2 id="Two-direcitons"><a href="#Two-direcitons" class="headerlink" title="Two direcitons"></a>Two direcitons</h2><hr>
-<p>Two directions usually means one pointer at start, the other at end. those two pointers move towards each other. Problems like palindrome or two sum can be solved using this method.</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/08/03/two-pointers-algorithm/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
         
-      
-    </div>
 
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/08/03/two-pointers-algorithm/" rel="prev" title="Two Pointers Algorithm">
+      <i class="fa fa-chevron-left"></i> Two Pointers Algorithm
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
       </footer>
+    
   </article>
   
   
-  
-
-
   
 
 
@@ -347,6 +302,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-sort"><span class="nav-number">1.</span> <span class="nav-text">Quick sort</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#464-Sort-Integers-II"><span class="nav-number">1.1.</span> <span class="nav-text">464. Sort Integers II</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-select"><span class="nav-number">2.</span> <span class="nav-text">Quick select</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#461-Kth-Smallest-Numbers-in-Unsorted-Array"><span class="nav-number">2.1.</span> <span class="nav-text">461. Kth Smallest Numbers in Unsorted Array</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#References"><span class="nav-number">3.</span> <span class="nav-text">References</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 

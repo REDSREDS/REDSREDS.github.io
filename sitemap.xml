@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://redsreds.github.io/2020/08/03/quick-sort-and-quick-select/</loc>
+    
+    <lastmod>2020-08-03</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://redsreds.github.io/2020/08/03/two-pointers-algorithm/</loc>
     
     <lastmod>2020-08-03</lastmod>
@@ -40,6 +47,13 @@
   
   <url>
     <loc>https://redsreds.github.io/tags/lintcode/</loc>
+    <lastmod>2020-08-03</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://redsreds.github.io/tags/sort/</loc>
     <lastmod>2020-08-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
