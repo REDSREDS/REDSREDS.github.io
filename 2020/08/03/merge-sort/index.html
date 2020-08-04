@@ -28,7 +28,7 @@
 <meta property="og:description" content="It is like a DFS post order traverse based on divide and conquer algorithms. Recursively divide the array (parent node) into two subarrays (two child nodes), and merge them together (the function at e">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-08-04T01:37:55.000Z">
-<meta property="article:modified_time" content="2020-08-04T01:37:55.941Z">
+<meta property="article:modified_time" content="2020-08-04T01:43:17.673Z">
 <meta property="article:author" content="max chen">
 <meta property="article:tag" content="sort">
 <meta property="article:tag" content="algorithms">
@@ -180,8 +180,9 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
+              
 
-              <time title="Created: 2020-08-03 21:37:55" itemprop="dateCreated datePublished" datetime="2020-08-03T21:37:55-04:00">2020-08-03</time>
+              <time title="Created: 2020-08-03 21:37:55 / Modified: 21:43:17" itemprop="dateCreated datePublished" datetime="2020-08-03T21:37:55-04:00">2020-08-03</time>
             </span>
 
           
@@ -196,6 +197,7 @@
 
       
         <p>It is like a DFS post order traverse based on divide and conquer algorithms. Recursively divide the array (parent node) into two subarrays (two child nodes), and merge them together (the function at each node, is two merge two child nodes together). The merge action will make it a sorted array. And because it is post order traverse, so the subarrays would alrady be sorted, so we just need to merge two sorted arrays into one.</p>
+<a id="more"></a>
 <p>&lt;% codeblock MergeSort lang: java %&gt;<br>public void sortIntegers2(int[] A) {<br>    if(A == null || A.length == 0) {<br>        return;<br>    }</p>
 <pre><code>int[] temp = new int[A.length];
 mergeSort(A, 0, A.length - 1, temp);</code></pre>
