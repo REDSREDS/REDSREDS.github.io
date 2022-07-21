@@ -9,14 +9,14 @@
   </url>
   
   <url>
-    <loc>https://redsreds.github.io/2020/08/03/quick-sort-and-quick-select/</loc>
+    <loc>https://redsreds.github.io/2020/08/03/merge-sort/</loc>
     
     <lastmod>2022-07-21</lastmod>
     
   </url>
   
   <url>
-    <loc>https://redsreds.github.io/2020/08/03/merge-sort/</loc>
+    <loc>https://redsreds.github.io/2020/08/03/quick-sort-and-quick-select/</loc>
     
     <lastmod>2022-07-21</lastmod>
     
@@ -53,13 +53,6 @@
 
   
   <url>
-    <loc>https://redsreds.github.io/tags/tools/</loc>
-    <lastmod>2022-07-21</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://redsreds.github.io/tags/docker/</loc>
     <lastmod>2022-07-21</lastmod>
     <changefreq>daily</changefreq>
@@ -67,7 +60,7 @@
   </url>
   
   <url>
-    <loc>https://redsreds.github.io/tags/sort/</loc>
+    <loc>https://redsreds.github.io/tags/tools/</loc>
     <lastmod>2022-07-21</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -75,6 +68,13 @@
   
   <url>
     <loc>https://redsreds.github.io/tags/algorithms/</loc>
+    <lastmod>2022-07-21</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://redsreds.github.io/tags/sort/</loc>
     <lastmod>2022-07-21</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
