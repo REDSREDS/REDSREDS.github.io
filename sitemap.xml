@@ -2,21 +2,14 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://redsreds.github.io/2020/08/05/docker/</loc>
+    
+    <lastmod>2022-07-21</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://redsreds.github.io/2020/08/03/merge-sort/</loc>
-    
-    <lastmod>2022-07-21</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://redsreds.github.io/2020/08/03/two-pointers-algorithm/</loc>
-    
-    <lastmod>2022-07-21</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://redsreds.github.io/2020/08/04/stack/</loc>
     
     <lastmod>2022-07-21</lastmod>
     
@@ -30,7 +23,14 @@
   </url>
   
   <url>
-    <loc>https://redsreds.github.io/2020/08/05/docker/</loc>
+    <loc>https://redsreds.github.io/2020/08/04/stack/</loc>
+    
+    <lastmod>2022-07-21</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://redsreds.github.io/2020/08/03/two-pointers-algorithm/</loc>
     
     <lastmod>2022-07-21</lastmod>
     
@@ -60,6 +60,13 @@
   </url>
   
   <url>
+    <loc>https://redsreds.github.io/tags/docker/</loc>
+    <lastmod>2022-07-21</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://redsreds.github.io/tags/algorithms/</loc>
     <lastmod>2022-07-21</lastmod>
     <changefreq>daily</changefreq>
@@ -82,13 +89,6 @@
   
   <url>
     <loc>https://redsreds.github.io/tags/Monotone-stack/</loc>
-    <lastmod>2022-07-21</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://redsreds.github.io/tags/docker/</loc>
     <lastmod>2022-07-21</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
