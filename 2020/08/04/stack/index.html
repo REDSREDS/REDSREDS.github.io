@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>Stack | Max Chen&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Stack 12. Min Stack: use another stack to store the min val.227. Mock Hanoi Tower by Stacks423. Valid Parentheses">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Stack">
+<meta property="og:url" content="https://redsreds.github.io/2020/08/04/stack/index.html">
+<meta property="og:site_name" content="Max Chen&#39;s Blog">
+<meta property="og:description" content="Stack 12. Min Stack: use another stack to store the min val.227. Mock Hanoi Tower by Stacks423. Valid Parentheses">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-08-04T21:51:37.000Z">
+<meta property="article:modified_time" content="2022-07-21T03:30:11.982Z">
+<meta property="article:author" content="max chen">
+<meta property="article:tag" content="algorithms">
+<meta property="article:tag" content="lintcode">
+<meta property="article:tag" content="Monotone stack">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Max Chen&#39;s Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Max Chen&#39;s Blog</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://REDSREDS.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-stack" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/08/04/stack/" class="article-date">
+  <time datetime="2020-08-04T21:51:37.000Z" itemprop="datePublished">2020-08-04</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Stack
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Stack"><a href="#Stack" class="headerlink" title="Stack"></a>Stack</h2><hr>
+<p><strong>12. Min Stack:</strong> use another stack to store the min val.<br><strong>227. Mock Hanoi Tower by Stacks</strong><br><strong>423. Valid Parentheses</strong></p>
+<span id="more"></span>
+<p><strong>193. Longest Valid Parentheses:</strong> Initially, my idea is to only push <code>&#39;(&#39;</code>, whenever seeing <code>&#39;)&#39;</code>, pop the stack and <code>temp += 2</code>, when the stack is empty and the next value is <code>&#39;)&#39;</code>, renew the <code>max</code> and <code>temp = 0</code>. However, in this method, some cases wil not pass, e.g. <code>()(((()</code>, my answer will yield 4 whereas the correct answer is 2, because I did not take into consideration that there will be invalid <code>(</code> that separate valid parentheses. The correct algorithm is record the index in the stack, invalid <code>&#39;(&#39;</code> and <code>&#39;)&#39;</code> will be both recorded in the stack using their index, so all value in the stack will be temporily regarded as invalid. And every pop(), the max would be updated by comparing with <code>i - stack.peek()</code> or <code>i + 1</code> when stack is empty.</p>
+<blockquote>
+<p>Note that sometime when the result is about length of a subarray or substring, the stack could store index instead of value.</p>
+</blockquote>
+<figure class="highlight java"><figcaption><span>LargestRectangleArea</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="type">int</span> <span class="title function_">longestValidParentheses</span><span class="params">(String s)</span> &#123;</span><br><span class="line">    <span class="type">int</span> <span class="variable">max</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">    Stack&lt;Integer&gt; stack = <span class="keyword">new</span> <span class="title class_">Stack</span>&lt;&gt;();</span><br><span class="line">    <span class="type">char</span>[] arr = s.toCharArray();</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; arr.length; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span>(arr[i] == <span class="string">&#x27;(&#x27;</span>) &#123;</span><br><span class="line">            stack.push(i);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">if</span>(stack.isEmpty() || arr[stack.peek()] == <span class="string">&#x27;)&#x27;</span>) &#123;</span><br><span class="line">                stack.push(i);</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                stack.pop();</span><br><span class="line">                max = Math.max(max, i - (stack.isEmpty() ? -<span class="number">1</span> : stack.peek()));</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> max;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="Monotone-stack"><a href="#Monotone-stack" class="headerlink" title="Monotone stack"></a>Monotone stack</h2><hr>
+<p><strong>122. Largest Rectangle in Histogram:</strong> The idea is to maintain a increasing stack (record the index of the array), if the value is smaller than and equals to the peek value (<code>height[stack.peek()]</code>) in the stack, it means that the following value will not contribute to the rectangle whose height is related to the peek value of the stack, then we can directly pop the value and calculate the area.</p>
+<figure class="highlight java"><figcaption><span>LargestRectangleArea</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="type">int</span> <span class="title function_">largestRectangleArea</span><span class="params">(<span class="type">int</span>[] height)</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (height == <span class="literal">null</span> || height.length == <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    Stack&lt;Integer&gt; stack = <span class="keyword">new</span> <span class="title class_">Stack</span>&lt;&gt;();</span><br><span class="line">    <span class="type">int</span> <span class="variable">max</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">    <span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span>(; i &lt; height.length; i++) &#123;</span><br><span class="line">        <span class="keyword">while</span>(!stack.isEmpty() &amp;&amp; height[i] &lt;= height[stack.peek()]) &#123;</span><br><span class="line">            <span class="type">int</span> <span class="variable">h</span> <span class="operator">=</span> height[stack.pop()];</span><br><span class="line">            <span class="comment">//here note the i - stack.peek() - 1</span></span><br><span class="line">            <span class="type">int</span> <span class="variable">w</span> <span class="operator">=</span> stack.isEmpty() ? i : i - stack.peek() - <span class="number">1</span>;</span><br><span class="line">            max = Math.max(max, w * h);</span><br><span class="line">        &#125;</span><br><span class="line">        stack.push(i);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">while</span>(!stack.isEmpty()) &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">h</span> <span class="operator">=</span> height[stack.pop()];</span><br><span class="line">        <span class="type">int</span> <span class="variable">w</span> <span class="operator">=</span> stack.isEmpty() ? i : i - stack.peek() - <span class="number">1</span>;</span><br><span class="line">        max = Math.max(max, w * h);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> max;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>834. Remove Duplicate Letters:</strong> In this problem, we traverse the string, and use the stack to store the best case before current index. At current index, if stack have this char, then there is no way to optimize because it is already optimized, we just move on, remember to decrease the count. if the stack does not have this char, we need to make sure the this char is added to the best position, just compare with the <code>stack.peek()</code>, if its value is lower that peek and peek cnt is larger than 1, then just pop the value, until we find one does not satisfy the requirement, push current value.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://redsreds.github.io/2020/08/04/stack/" data-id="cl5uiennz000f4fxqfja86jlj" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Monotone-stack/" rel="tag">Monotone stack</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithms/" rel="tag">algorithms</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/lintcode/" rel="tag">lintcode</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2020/08/05/docker/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Docker
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/08/03/merge-sort/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Merge Sort</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Monotone-stack/" rel="tag">Monotone stack</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithms/" rel="tag">algorithms</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/" rel="tag">docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/lintcode/" rel="tag">lintcode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sort/" rel="tag">sort</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tools/" rel="tag">tools</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Monotone-stack/" style="font-size: 10px;">Monotone stack</a> <a href="/tags/algorithms/" style="font-size: 20px;">algorithms</a> <a href="/tags/docker/" style="font-size: 10px;">docker</a> <a href="/tags/lintcode/" style="font-size: 16.67px;">lintcode</a> <a href="/tags/sort/" style="font-size: 13.33px;">sort</a> <a href="/tags/tools/" style="font-size: 10px;">tools</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">August 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/08/05/docker/">Docker</a>
+          </li>
+        
+          <li>
+            <a href="/2020/08/04/stack/">Stack</a>
+          </li>
+        
+          <li>
+            <a href="/2020/08/03/merge-sort/">Merge Sort</a>
+          </li>
+        
+          <li>
+            <a href="/2020/08/03/quick-sort-and-quick-select/">QuickSort And QuickSelect</a>
+          </li>
+        
+          <li>
+            <a href="/2020/08/03/two-pointers-algorithm/">Two Pointers Algorithm</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2022 max chen<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>
